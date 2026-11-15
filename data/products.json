@@ -45,10 +45,10 @@
         {
           "shop": "FC-Moto",
           "country": "DE",
-          "price": null,
-          "url": "https://www.fc-moto.de/nl/TCX-Clima-2-Surround-Gore-Tex-Motorfiets-Laarzen",
-          "inStock": null,
-          "note": "20% korting gezien, europrijs nog nakijken"
+          "price": 248.72,
+          "url": "https://www.fc-moto.com/nl-nl/p/tcx-clima-2-surround-gore-tex-motorfiets-laarzen-TCX-Clima-2-Surround-Gore-Tex-Motorcycle-Boot.v",
+          "inStock": true,
+          "note": "Prijs voor maat 45, nog 2 stuks voor deze prijs. Adviesprijs €329"
         },
         {
           "shop": "ChromeBurner",
@@ -132,9 +132,9 @@
           "shop": "FC-Moto",
           "country": "DE",
           "price": null,
-          "url": "https://www.fc-moto.de/en/Revit-Acre-H2O-waterproof-Motorcycle-Boots",
+          "url": "https://www.fc-moto.com/en-gb/p/revit-acre-h2o-waterproof-motorcycle-boots-REV-Revit-Acre-H2O-WP-MC-Boots-25.v",
           "inStock": null,
-          "note": "15% korting gezien, europrijs nog nakijken"
+          "note": "10% korting; site toonde alleen ponden zonder btw, europrijs nog niet bekend"
         },
         {
           "shop": "Bikeroutfit",
