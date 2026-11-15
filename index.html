@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prijswacht</title>
+<meta name="theme-color" content="#111c28">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* Layout idea: one quiet column of product rows; the only loud thing is the yellow shelf-edge price label. */
+:root{
+  --bg:#e8ecef; --surface:#ffffff; --ink:#111c28; --muted:#586574; --line:#cdd5dc;
+  --tag:#ffd60a; --tag-ink:#111c28; --accent:#1c48c4;
+  --good:#0a7446; --good-bg:#dff3e8; --bad:#a3271f; --bad-bg:#f8e3e0; --idle-bg:#e8ecef;
+  --display:"Big Shoulders Display","Arial Narrow",Impact,sans-serif;
+  --body:"Instrument Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0d141b; --surface:#16202b; --ink:#e7ecf1; --muted:#94a2b0; --line:#2a3745;
+    --tag:#ffd60a; --tag-ink:#111c28; --accent:#93b2ff;
+    --good:#56c990; --good-bg:#12362a; --bad:#ff9288; --bad-bg:#3d1c1a; --idle-bg:#212d3a;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0d141b; --surface:#16202b; --ink:#e7ecf1; --muted:#94a2b0; --line:#2a3745;
+  --tag:#ffd60a; --tag-ink:#111c28; --accent:#93b2ff;
+  --good:#56c990; --good-bg:#12362a; --bad:#ff9288; --bad-bg:#3d1c1a; --idle-bg:#212d3a;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.45}
+.wrap{max-width:720px;margin:0 auto;padding:20px 16px 56px;display:flex;flex-direction:column;gap:18px}
+header{display:flex;flex-direction:column;gap:6px}
+.brand{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;flex-wrap:wrap}
+h1{font-family:var(--display);font-weight:800;font-size:54px;line-height:.9;letter-spacing:.01em;margin:0;text-transform:uppercase}
+h1 span{background:var(--tag);color:var(--tag-ink);padding:0 8px 2px;border-radius:3px;display:inline-block;transform:rotate(-2deg)}
+.lede{margin:0;color:var(--muted);max-width:46ch}
+button{font:inherit;color:inherit;cursor:pointer}
+.btn{border:1.5px solid var(--ink);background:var(--ink);color:var(--surface);padding:10px 16px;border-radius:999px;font-weight:600}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+.btn.small{padding:6px 12px;font-size:14px}
+.btn.danger{background:var(--bad);border-color:var(--bad);color:#fff}
+.btn:focus-visible,a:focus-visible,summary:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.summary{display:flex;flex-wrap:wrap;gap:8px 18px;padding:12px 14px;background:var(--surface);border:1px solid var(--line);border-radius:10px;font-size:14px;color:var(--muted)}
+.summary b{color:var(--ink);font-variant-numeric:tabular-nums}
+.notice{padding:12px 14px;border-radius:10px;background:var(--idle-bg);border:1px dashed var(--line);color:var(--muted);font-size:14px}
+#list{display:flex;flex-direction:column;gap:14px}
+.card{background:var(--surface);border:1px solid var(--line);border-left:6px solid var(--line);border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:14px}
+.card.deal{border-left-color:var(--good)}
+.card.over{border-left-color:var(--bad)}
+.head{display:flex;flex-direction:column;gap:4px}
+.head h2{font-size:18px;line-height:1.25;margin:0;font-weight:700;text-wrap:balance}
+.variant{font-size:14px;color:var(--muted)}
+.main{display:flex;gap:16px;flex-wrap:wrap;align-items:flex-start}
+.tagcol{display:flex;flex-direction:column;gap:8px;flex:0 0 auto}
+.tag{position:relative;background:var(--tag);color:var(--tag-ink);border-radius:4px;padding:6px 14px 4px 26px;transform:rotate(-2deg);font-family:var(--display);font-weight:800;display:inline-flex;align-items:flex-start;gap:2px;box-shadow:0 2px 0 rgba(0,0,0,.18);min-width:128px}
+.tag::before{content:"";position:absolute;left:9px;top:50%;width:9px;height:9px;margin-top:-5px;border-radius:50%;background:var(--surface)}
+.tag .cur{font-size:22px;line-height:1.5}
+.tag .eur{font-size:56px;line-height:.95;font-variant-numeric:tabular-nums}
+.tag .ct{font-size:24px;line-height:1.35;font-variant-numeric:tabular-nums}
+.tag.none{background:transparent;color:var(--muted);border:1.5px dashed var(--line);box-shadow:none;font-family:var(--body);font-weight:500;font-size:14px;padding:16px 14px;transform:none}
+.tag.none::before{display:none}
+.where{font-size:14px;color:var(--muted)}
+.where b{color:var(--ink);font-weight:600}
+.cc{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.06em;border:1px solid var(--line);border-radius:4px;padding:0 5px;color:var(--muted);vertical-align:1px}
+.info{flex:1 1 220px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.pill{align-self:flex-start;font-size:14px;font-weight:600;padding:4px 11px;border-radius:999px;background:var(--idle-bg);color:var(--muted)}
+.pill.good{background:var(--good-bg);color:var(--good)}
+.pill.bad{background:var(--bad-bg);color:var(--bad)}
+.facts{font-size:14px;color:var(--muted);display:flex;flex-direction:column;gap:2px}
+.facts b{color:var(--ink);font-weight:600;font-variant-numeric:tabular-nums}
+.spark{width:100%;height:56px;display:block}
+.spark .area{fill:var(--accent);opacity:.12}
+.spark .line{fill:none;stroke:var(--accent);stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
+.spark .target{stroke:var(--good);stroke-width:1.2;stroke-dasharray:4 4}
+.spark .dot{fill:var(--accent);stroke:var(--surface);stroke-width:2}
+details{border-top:1px solid var(--line);padding-top:10px}
+summary{cursor:pointer;font-weight:600;font-size:14px;color:var(--accent);list-style-position:inside}
+.offers{list-style:none;margin:10px 0 0;padding:0;display:flex;flex-direction:column}
+.offers li{display:grid;grid-template-columns:1fr auto;gap:2px 12px;padding:9px 0;border-bottom:1px solid var(--line);font-size:14px}
+.offers li:last-child{border-bottom:0}
+.offers .shop{font-weight:600;overflow-wrap:anywhere}
+.offers .p{font-weight:700;font-variant-numeric:tabular-nums;text-align:right}
+.offers .sub{color:var(--muted);grid-column:1/-1;display:flex;gap:10px;flex-wrap:wrap}
+.offers a,.links a{color:var(--accent);overflow-wrap:anywhere}
+.out{color:var(--bad)}
+.links{font-size:13px;color:var(--muted);margin-top:8px;display:flex;flex-direction:column;gap:2px}
+.actions{display:flex;gap:8px;flex-wrap:wrap}
+footer{font-size:13px;color:var(--muted);max-width:60ch}
+dialog{border:0;border-radius:14px;padding:0;background:var(--surface);color:var(--ink);width:min(520px,calc(100vw - 24px));max-height:calc(100% - 24px)}
+dialog::backdrop{background:rgba(8,14,20,.6)}
+form{padding:20px;display:flex;flex-direction:column;gap:14px}
+form h2{margin:0;font-family:var(--display);font-size:32px;line-height:1;text-transform:uppercase}
+label{display:flex;flex-direction:column;gap:5px;font-size:14px;font-weight:600}
+label small{font-weight:400;color:var(--muted)}
+input[type=text],input[type=number],textarea{font:inherit;color:var(--ink);background:var(--bg);border:1.5px solid var(--line);border-radius:8px;padding:10px 12px;width:100%}
+textarea{min-height:72px;resize:vertical}
+.row{display:flex;gap:12px;flex-wrap:wrap}
+.row>label{flex:1 1 140px}
+fieldset{border:0;padding:0;margin:0;display:flex;flex-direction:column;gap:6px}
+legend{font-size:14px;font-weight:600;padding:0;margin-bottom:6px}
+.checks{display:flex;gap:8px;flex-wrap:wrap}
+.checks label{flex-direction:row;align-items:center;gap:6px;font-weight:500;border:1.5px solid var(--line);border-radius:999px;padding:6px 12px}
+.formerr{color:var(--bad);font-size:14px;min-height:1.2em;margin:0}
+.help{font-size:14px;color:var(--muted);margin:0}
+ol.help{padding-left:20px;display:flex;flex-direction:column;gap:4px}
+input[type=password]{font:inherit;color:var(--ink);background:var(--bg);border:1.5px solid var(--line);border-radius:8px;padding:10px 12px;width:100%}
+.formbtns{display:flex;gap:8px;justify-content:flex-end;flex-wrap:wrap}
+@media (max-width:420px){h1{font-size:44px}.tag .eur{font-size:48px}}
+@media (prefers-reduced-motion:no-preference){.card{transition:border-color .2s}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand">
+      <h1>Prijs<span>wacht</span></h1>
+      <div class="actions"><button class="btn ghost" id="setBtn" type="button">Instellingen</button><button class="btn" id="addBtn" type="button">Product toevoegen</button></div>
+    </div>
+    <p class="lede">Je lijst met dingen die je pas koopt als de prijs klopt. Winkels in Nederland, België en Duitsland worden elke dag nagekeken.</p>
+  </header>
+
+  <div class="summary" id="summary" aria-live="polite">Lijst laden…</div>
+  <div class="notice" id="notice" hidden></div>
+  <div id="list"></div>
+
+  <footer>Claude zoekt één keer per dag de prijzen op en zet ze hier neer. Je krijgt een melding zodra iets onder je richtprijs komt. Prijs en voorraad kunnen in de winkel net anders zijn, kijk dus altijd even in de winkel zelf voor je bestelt.</footer>
+</div>
+
+<dialog id="dlg">
+  <form id="frm" novalidate>
+    <h2 id="frmTitle">Product toevoegen</h2>
+    <label for="fName">Naam van het product
+      <input type="text" id="fName" maxlength="120" placeholder="Bijv. TCX Clima 2 Surround GTX" autocomplete="off">
+    </label>
+    <div class="row">
+      <label for="fVariant">Maat, kleur of uitvoering <small>optioneel</small>
+        <input type="text" id="fVariant" maxlength="80" placeholder="Bijv. maat 44, zwart" autocomplete="off">
+      </label>
+      <label for="fTarget">Richtprijs in euro <small>melding bij deze prijs of lager</small>
+        <input type="text" id="fTarget" inputmode="decimal" maxlength="10" placeholder="Bijv. 220" autocomplete="off">
+      </label>
+    </div>
+    <fieldset>
+      <legend>In welke landen zoeken?</legend>
+      <div class="checks">
+        <label for="cNL"><input type="checkbox" id="cNL" value="NL" checked> Nederland</label>
+        <label for="cBE"><input type="checkbox" id="cBE" value="BE" checked> België</label>
+        <label for="cDE"><input type="checkbox" id="cDE" value="DE" checked> Duitsland</label>
+      </div>
+    </fieldset>
+    <label for="fLinks">Links naar winkels die je zelf al hebt gevonden <small>optioneel, één per regel</small>
+      <textarea id="fLinks" placeholder="https://…"></textarea>
+    </label>
+    <p class="formerr" id="frmErr" role="alert"></p>
+    <div class="formbtns">
+      <button class="btn ghost" type="button" id="cancelBtn">Annuleren</button>
+      <button class="btn" type="submit" id="saveBtn">Opslaan</button>
+    </div>
+  </form>
+</dialog>
+
+<dialog id="setDlg">
+  <form id="setFrm" novalidate>
+    <h2>Instellingen</h2>
+    <p class="help" id="setState"></p>
+    <p class="help">Iedereen met de link kan je lijst bekijken. Om op dit toestel producten toe te voegen of aan te passen is een toegangscode van GitHub nodig. De code blijft alleen op dit toestel staan.</p>
+    <ol class="help">
+      <li>Ga op github.com naar Settings, Developer settings, Personal access tokens, Fine-grained tokens.</li>
+      <li>Kies Generate new token en geef alleen toegang tot het project van deze app.</li>
+      <li>Zet bij Repository permissions het onderdeel Contents op Read and write.</li>
+      <li>Kopieer de code en plak hem hieronder.</li>
+    </ol>
+    <label for="fToken">Toegangscode van GitHub
+      <input type="password" id="fToken" autocomplete="off" spellcheck="false" placeholder="github_pat_…">
+    </label>
+    <p class="formerr" id="setErr" role="alert"></p>
+    <div class="formbtns">
+      <button class="btn ghost" type="button" id="wipeBtn">Code wissen</button>
+      <button class="btn ghost" type="button" id="setClose">Sluiten</button>
+      <button class="btn" type="submit" id="setSave">Opslaan</button>
+    </div>
+  </form>
+</dialog>
+
+<script>
+(function(){
+  var $ = function(id){ return document.getElementById(id); };
+  var listEl = $('list'), summaryEl = $('summary'), noticeEl = $('notice');
+  var dlg = $('dlg'), frm = $('frm');
+  var products = [], status = null, loaded = false, canWrite = false;
+  var setDlg = $('setDlg');
+  var TOKEN_KEY = 'prijswacht-token', FILE = 'data/products.json';
+  var repo = (function(){
+    var m = location.hostname.match(/^([^.]+)\.github\.io$/i); if (!m) return null;
+    var seg = location.pathname.split('/').filter(Boolean)[0];
+    return {owner: m[1], name: seg && !/\.html?$/i.test(seg) ? seg : location.hostname};
+  })();
+  function getToken(){ try { return localStorage.getItem(TOKEN_KEY) || ''; } catch(e){ return ''; } }
+  function setToken(t){ try { if (t) localStorage.setItem(TOKEN_KEY, t); else localStorage.removeItem(TOKEN_KEY); return true; } catch(e){ return false; } }
+  function b64dec(b){ var bin = atob(String(b).replace(/\s/g, '')), u = new Uint8Array(bin.length); for (var i = 0; i < bin.length; i++) u[i] = bin.charCodeAt(i); return new TextDecoder().decode(u); }
+  function b64enc(str){ var u = new TextEncoder().encode(str), bin = ''; for (var i = 0; i < u.length; i++) bin += String.fromCharCode(u[i]); return btoa(bin); }
+  function api(method, body, token){
+    if (!repo) return Promise.reject(new Error('geen project'));
+    return fetch('https://api.github.com/repos/' + repo.owner + '/' + repo.name + '/contents/' + FILE, {
+      method: method, cache: 'no-store',
+      headers: {Authorization: 'Bearer ' + (token || getToken()), Accept: 'application/vnd.github+json'},
+      body: body ? JSON.stringify(body) : undefined
+    }).then(function(r){
+      if (!r.ok){ var e = new Error('http ' + r.status); e.status = r.status; throw e; }
+      return r.json();
+    });
+  }
+  function norm(d){ d = d && typeof d === 'object' ? d : {}; if (!Array.isArray(d.products)) d.products = []; return d; }
+  function apply(d){
+    d = norm(d);
+    products = d.products.filter(function(p){ return p && typeof p === 'object' && p.id; });
+    status = d.status && typeof d.status === 'object' ? d.status : null;
+    loaded = true; render();
+  }
+  function errText(er){
+    var c = er && er.status;
+    if (c === 401 || c === 403) return 'GitHub weigert je toegangscode. Maak een nieuwe code aan en vul die in bij Instellingen.';
+    if (c === 404) return 'GitHub kan je lijst niet vinden. Controleer of de code toegang heeft tot dit project.';
+    return 'Opslaan is niet gelukt. Controleer je verbinding en probeer het opnieuw.';
+  }
+  var store = {
+    load: function(){
+      canWrite = !!(getToken() && repo);
+      var first = canWrite ? api('GET').then(function(r){ return JSON.parse(b64dec(r.content)); }) : Promise.reject(null);
+      return first.catch(function(er){
+        if (er && (er.status === 401 || er.status === 403 || er.status === 404)){ canWrite = false; note(errText(er)); }
+        return fetch(FILE + '?ts=' + Date.now(), {cache: 'no-store'}).then(function(r){ if (!r.ok) throw new Error('http ' + r.status); return r.json(); });
+      }).then(apply);
+    },
+    change: function(mut, retried){
+      return api('GET').then(function(r){
+        var d = norm(JSON.parse(b64dec(r.content))); mut(d);
+        return api('PUT', {message: 'Lijst bijgewerkt in de app', content: b64enc(JSON.stringify(d, null, 2) + '\n'), sha: r.sha})
+          .then(function(){ apply(d); });
+      }).catch(function(er){ if (er && er.status === 409 && !retried) return store.change(mut, true); throw er; });
+    }
+  };
+  var openIds = {}, confirmId = null, editId = null;
+
+  function esc(s){ return String(s == null ? '' : s).replace(/[&<>"']/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); }
+  function okUrl(u){ return typeof u === 'string' && /^https?:\/\/[^\s"'<>]+$/i.test(u); }
+  function isNum(n){ return typeof n === 'number' && isFinite(n) && n >= 0; }
+  function euro(n){ return '€ ' + n.toLocaleString('nl-NL', {minimumFractionDigits:2, maximumFractionDigits:2}); }
+  function euroShort(n){ return '€ ' + n.toLocaleString('nl-NL', {minimumFractionDigits: n % 1 ? 2 : 0, maximumFractionDigits:2}); }
+  function when(iso, withTime){
+    var d = new Date(iso); if (isNaN(d)) return '';
+    var o = {weekday:'short', day:'numeric', month:'short'};
+    if (withTime){ o.hour = '2-digit'; o.minute = '2-digit'; }
+    return d.toLocaleString('nl-NL', o);
+  }
+  function host(u){ try { return new URL(u).hostname.replace(/^www\./,''); } catch(e){ return u; } }
+
+  function offersOf(p){
+    return (Array.isArray(p.offers) ? p.offers : []).filter(function(o){ return o && typeof o === 'object'; });
+  }
+  function bestOf(p){
+    var best = null;
+    offersOf(p).forEach(function(o){
+      if (!isNum(o.price) || o.inStock === false) return;
+      if (!best || o.price < best.price) best = o;
+    });
+    return best;
+  }
+  function historyOf(p){
+    return (Array.isArray(p.history) ? p.history : []).filter(function(h){ return h && isNum(h.p) && typeof h.d === 'string'; });
+  }
+  function lowestOf(p){
+    var low = null;
+    historyOf(p).forEach(function(h){ if (!low || h.p < low.p) low = h; });
+    return low;
+  }
+  function stateOf(p){
+    var b = bestOf(p), t = isNum(p.target) ? p.target : null;
+    if (!b) return {k:'idle', text:'Wacht op de eerste controle'};
+    if (t == null) return {k:'idle', text:'Nog geen richtprijs ingesteld'};
+    if (b.price <= t) return {k:'good', text: b.price < t ? 'Onder je richtprijs, ' + euroShort(Math.round((t - b.price)*100)/100) + ' eronder' : 'Precies op je richtprijs'};
+    return {k:'bad', text:'Nog ' + euroShort(Math.round((b.price - t)*100)/100) + ' te duur'};
+  }
+
+  function spark(p){
+    var h = historyOf(p).slice(-60);
+    if (h.length < 2) return '<div class="facts">Het prijsverloop verschijnt na een paar controles.</div>';
+    var t = isNum(p.target) ? p.target : null;
+    var vals = h.map(function(x){ return x.p; });
+    var lo = Math.min.apply(null, vals.concat(t == null ? [] : [t])), hi = Math.max.apply(null, vals.concat(t == null ? [] : [t]));
+    if (hi === lo){ hi += 1; lo -= 1; }
+    var W = 300, H = 56, px = 6, py = 8;
+    var X = function(i){ return px + i * (W - 2*px) / (h.length - 1); };
+    var Y = function(v){ return py + (hi - v) * (H - 2*py) / (hi - lo); };
+    var pts = h.map(function(x, i){ return X(i).toFixed(1) + ',' + Y(x.p).toFixed(1); });
+    var area = 'M' + pts[0] + ' L' + pts.slice(1).join(' L') + ' L' + X(h.length-1).toFixed(1) + ',' + H + ' L' + X(0).toFixed(1) + ',' + H + ' Z';
+    var last = h[h.length-1];
+    var label = 'Prijsverloop van ' + euro(h[0].p) + ' naar ' + euro(last.p) + ' over ' + h.length + ' controles';
+    return '<svg class="spark" viewBox="0 0 ' + W + ' ' + H + '" preserveAspectRatio="none" role="img" aria-label="' + esc(label) + '">' +
+      '<path class="area" d="' + area + '"/>' +
+      (t == null ? '' : '<line class="target" x1="0" x2="' + W + '" y1="' + Y(t).toFixed(1) + '" y2="' + Y(t).toFixed(1) + '"/>') +
+      '<polyline class="line" points="' + pts.join(' ') + '"/>' +
+      '<circle class="dot" r="4" cx="' + X(h.length-1).toFixed(1) + '" cy="' + Y(last.p).toFixed(1) + '"/></svg>';
+  }
+
+  function tagHtml(b){
+    if (!b) return '<div class="tag none">Nog geen prijs gevonden</div>';
+    var parts = b.price.toFixed(2).split('.');
+    return '<div class="tag" aria-label="Laagste prijs ' + esc(euro(b.price)) + '"><span class="cur">€</span><span class="eur">' +
+      esc(Number(parts[0]).toLocaleString('nl-NL')) + '</span><span class="ct">' + esc(parts[1]) + '</span></div>';
+  }
+  function cc(c){ return c ? ' <span class="cc">' + esc(String(c).toUpperCase().slice(0,3)) + '</span>' : ''; }
+
+  function cardHtml(p){
+    var b = bestOf(p), st = stateOf(p), low = lowestOf(p), offs = offersOf(p).slice();
+    offs.sort(function(a, c){ return (isNum(a.price) ? a.price : 1e12) - (isNum(c.price) ? c.price : 1e12); });
+    var cls = st.k === 'good' ? ' deal' : st.k === 'bad' ? ' over' : '';
+    var facts = '';
+    facts += '<div>Richtprijs: <b>' + (isNum(p.target) ? esc(euroShort(p.target)) : 'niet ingesteld') + '</b></div>';
+    if (low) facts += '<div>Laagste tot nu toe: <b>' + esc(euro(low.p)) + '</b> op ' + esc(when(low.d)) + '</div>';
+    if (p.checkedAt) facts += '<div>Nagekeken: ' + esc(when(p.checkedAt, true)) + '</div>';
+    var countries = Array.isArray(p.countries) && p.countries.length ? p.countries.join(', ') : 'NL, BE, DE';
+    facts += '<div>Zoekt in: ' + esc(countries) + '</div>';
+
+    var rows = offs.map(function(o){
+      var sub = [];
+      if (o.inStock === false) sub.push('<span class="out">Niet op voorraad</span>');
+      else if (o.inStock === true) sub.push('<span>Op voorraad</span>');
+      if (o.note) sub.push('<span>' + esc(o.note) + '</span>');
+      if (okUrl(o.url)) sub.push('<a href="' + esc(o.url) + '" target="_blank" rel="noopener noreferrer">Bekijk in de winkel</a>');
+      return '<li><span class="shop">' + esc(o.shop || 'Winkel') + cc(o.country) + '</span><span class="p">' +
+        (isNum(o.price) ? esc(euro(o.price)) : 'prijs onbekend') + '</span>' +
+        (sub.length ? '<span class="sub">' + sub.join('') + '</span>' : '') + '</li>';
+    }).join('');
+    var links = (Array.isArray(p.links) ? p.links : []).filter(okUrl);
+    var linksHtml = links.length ? '<div class="links">Jouw links:' + links.map(function(u){
+      return '<a href="' + esc(u) + '" target="_blank" rel="noopener noreferrer">' + esc(host(u)) + '</a>'; }).join('') + '</div>' : '';
+
+    var del = confirmId === p.id
+      ? '<button class="btn small danger" type="button" data-act="del-yes" data-id="' + esc(p.id) + '">Ja, verwijderen</button>' +
+        '<button class="btn small ghost" type="button" data-act="del-no">Toch niet</button>'
+      : '<button class="btn small ghost" type="button" data-act="del" data-id="' + esc(p.id) + '">Verwijderen</button>';
+
+    return '<article class="card' + cls + '">' +
+      '<div class="head"><h2>' + esc(p.name || 'Naamloos product') + '</h2>' +
+      (p.variant ? '<div class="variant">' + esc(p.variant) + '</div>' : '') + '</div>' +
+      '<div class="main"><div class="tagcol">' + tagHtml(b) +
+      (b ? '<div class="where">bij <b>' + esc(b.shop || 'winkel') + '</b>' + cc(b.country) + '</div>' : '') + '</div>' +
+      '<div class="info"><span class="pill ' + (st.k === 'idle' ? '' : st.k) + '">' + esc(st.text) + '</span>' +
+      '<div class="facts">' + facts + '</div>' + spark(p) + '</div></div>' +
+      '<details data-id="' + esc(p.id) + '"' + (openIds[p.id] ? ' open' : '') + '><summary>' +
+      (offs.length ? 'Alle winkels (' + offs.length + ')' : 'Nog geen winkels gevonden') + '</summary>' +
+      (rows ? '<ul class="offers">' + rows + '</ul>' : '<div class="facts" style="margin-top:8px">Bij de volgende controle zoekt Claude winkels voor dit product.</div>') +
+      linksHtml + '</details>' +
+      (canWrite ? '<div class="actions"><button class="btn small ghost" type="button" data-act="edit" data-id="' + esc(p.id) + '">Bewerken</button>' + del + '</div>' : '') +
+      '</article>';
+  }
+
+  function render(){
+    if (!loaded) return;
+    var deals = 0;
+    var sorted = products.slice().sort(function(a, b){
+      var ra = rank(a), rb = rank(b);
+      return ra - rb || String(a.name || '').localeCompare(String(b.name || ''), 'nl');
+    });
+    products.forEach(function(p){ if (stateOf(p).k === 'good') deals++; });
+    var bits = ['<span><b>' + products.length + '</b> ' + (products.length === 1 ? 'product' : 'producten') + '</span>',
+                '<span><b>' + deals + '</b> onder je richtprijs</span>'];
+    if (status && status.lastRun) bits.push('<span>Laatste controle: <b>' + esc(when(status.lastRun, true)) + '</b></span>');
+    if (status && status.nextRun) bits.push('<span>Volgende: <b>' + esc(when(status.nextRun, true)) + '</b></span>');
+    summaryEl.innerHTML = bits.join('');
+    listEl.innerHTML = sorted.length ? sorted.map(cardHtml).join('')
+      : '<div class="notice">Je lijst is nog leeg. Voeg een product toe met de naam zoals de winkel hem noemt, dan zoekt Claude er bij de volgende controle prijzen bij.</div>';
+  }
+  function rank(p){
+    var b = bestOf(p), k = stateOf(p).k;
+    if (k === 'good') return 0;
+    if (k === 'bad') return 1 + Math.min(0.99, (b.price - p.target) / Math.max(p.target, 1));
+    return 3;
+  }
+  function note(msg){ noticeEl.hidden = !msg; noticeEl.textContent = msg || ''; }
+
+  listEl.addEventListener('toggle', function(e){
+    var d = e.target; if (d.tagName === 'DETAILS' && d.dataset.id) openIds[d.dataset.id] = d.open;
+  }, true);
+
+  listEl.addEventListener('click', function(e){
+    var btn = e.target.closest('button[data-act]'); if (!btn) return;
+    var act = btn.dataset.act, id = btn.dataset.id;
+    if (act === 'del'){ confirmId = id; render(); }
+    else if (act === 'del-no'){ confirmId = null; render(); }
+    else if (act === 'del-yes'){
+      confirmId = null; btn.disabled = true;
+      store.change(function(d){ d.products = d.products.filter(function(p){ return !p || p.id !== id; }); }).then(function(){ note(''); }, function(err){ note(errText(err)); render(); });
+    }
+    else if (act === 'edit'){ openForm(products.filter(function(p){ return p.id === id; })[0]); }
+  });
+
+  function openForm(p){
+    editId = p ? p.id : null;
+    $('frmTitle').textContent = p ? 'Product bewerken' : 'Product toevoegen';
+    $('fName').value = p ? (p.name || '') : '';
+    $('fVariant').value = p ? (p.variant || '') : '';
+    $('fTarget').value = p && isNum(p.target) ? String(p.target).replace('.', ',') : '';
+    $('fLinks').value = p && Array.isArray(p.links) ? p.links.join('\n') : '';
+    var cs = p && Array.isArray(p.countries) && p.countries.length ? p.countries : ['NL','BE','DE'];
+    ['NL','BE','DE'].forEach(function(c){ $('c' + c).checked = cs.indexOf(c) >= 0; });
+    $('frmErr').textContent = '';
+    $('saveBtn').disabled = false;
+    if (typeof dlg.showModal === 'function') dlg.showModal(); else dlg.setAttribute('open', '');
+    $('fName').focus();
+  }
+  function closeForm(){ if (typeof dlg.close === 'function') dlg.close(); else dlg.removeAttribute('open'); }
+  $('addBtn').addEventListener('click', function(){
+    if (!canWrite){ openSettings(); return; }
+    openForm(null);
+  });
+  $('cancelBtn').addEventListener('click', closeForm);
+
+  frm.addEventListener('submit', function(e){
+    e.preventDefault();
+    var err = $('frmErr'); err.textContent = '';
+    var name = $('fName').value.trim();
+    if (!name){ err.textContent = 'Vul de naam van het product in.'; $('fName').focus(); return; }
+    var rawT = $('fTarget').value.trim().replace(/[€\s]/g, '').replace(',', '.');
+    var target = null;
+    if (rawT){
+      target = Number(rawT);
+      if (!isFinite(target) || target <= 0){ err.textContent = 'De richtprijs moet een bedrag zijn, bijvoorbeeld 220 of 199,95.'; $('fTarget').focus(); return; }
+      target = Math.round(target * 100) / 100;
+    }
+    var countries = ['NL','BE','DE'].filter(function(c){ return $('c' + c).checked; });
+    if (!countries.length){ err.textContent = 'Kies minstens één land om in te zoeken.'; return; }
+    var lines = $('fLinks').value.split(/\s+/).filter(Boolean);
+    var bad = lines.filter(function(u){ return !okUrl(u); });
+    if (bad.length){ err.textContent = 'Deze link klopt niet: ' + bad[0] + '. Een link begint met https://'; $('fLinks').focus(); return; }
+    var fields = {name:name, variant:$('fVariant').value.trim(), target:target, countries:countries, links:lines.slice(0, 10)};
+    $('saveBtn').disabled = true;
+    var id = editId;
+    store.change(function(d){
+      if (id){
+        d.products.forEach(function(p){ if (p && p.id === id) Object.keys(fields).forEach(function(k){ p[k] = fields[k]; }); });
+      } else {
+        fields.id = 'p' + Date.now().toString(36) + Math.random().toString(36).slice(2, 6);
+        fields.createdAt = new Date().toISOString(); fields.offers = []; fields.history = [];
+        d.products.push(fields);
+      }
+    }).then(function(){ note(''); closeForm(); }, function(er){
+      $('saveBtn').disabled = false; err.textContent = errText(er);
+    });
+  });
+
+  function openSettings(){
+    $('fToken').value = ''; $('setErr').textContent = ''; $('setSave').disabled = false;
+    $('setState').textContent = !repo ? 'Aanpassen werkt alleen als de app op GitHub Pages staat.'
+      : canWrite ? 'Aanpassen staat aan op dit toestel.' : 'Aanpassen staat uit op dit toestel. Je kunt de lijst wel bekijken.';
+    if (typeof setDlg.showModal === 'function') setDlg.showModal(); else setDlg.setAttribute('open', '');
+  }
+  function closeSettings(){ if (typeof setDlg.close === 'function') setDlg.close(); else setDlg.removeAttribute('open'); }
+  $('setBtn').addEventListener('click', openSettings);
+  $('setClose').addEventListener('click', closeSettings);
+  $('wipeBtn').addEventListener('click', function(){ setToken(''); closeSettings(); note(''); refresh(); });
+  $('setFrm').addEventListener('submit', function(e){
+    e.preventDefault();
+    var err = $('setErr'), t = $('fToken').value.trim(); err.textContent = '';
+    if (!repo){ err.textContent = 'Aanpassen werkt alleen als de app op GitHub Pages staat.'; return; }
+    if (!t){ err.textContent = 'Plak eerst je toegangscode.'; $('fToken').focus(); return; }
+    $('setSave').disabled = true;
+    api('GET', null, t).then(function(){
+      if (!setToken(t)){ $('setSave').disabled = false; err.textContent = 'Dit toestel kan de code niet bewaren. Controleer of opslag in je browser aan staat.'; return; }
+      $('fToken').value = ''; closeSettings(); note(''); refresh();
+    }, function(er){ $('setSave').disabled = false; err.textContent = errText(er); });
+  });
+
+  function refresh(){
+    return store.load().then(function(){
+      if (noticeEl.textContent.indexOf('niet worden opgehaald') >= 0) note('');
+    }, function(){
+      if (!loaded){ loaded = true; render(); summaryEl.textContent = 'Lijst niet bereikbaar'; }
+      note('Je lijst kan nu niet worden opgehaald. Controleer je verbinding en open de app opnieuw.');
+    });
+  }
+  refresh();
+  document.addEventListener('visibilitychange', function(){ if (!document.hidden && !dlg.open && !setDlg.open) refresh(); });
+  if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(function(){});
+})();
+</script>
+</body>
+</html>

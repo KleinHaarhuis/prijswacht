@@ -1,0 +1,124 @@
+{
+  "status": {
+    "lastRun": "2026-11-15T15:54:00Z",
+    "nextRun": "2026-11-16T07:00:00Z"
+  },
+  "products": [
+    {
+      "id": "tcx-clima-2-surround-gtx",
+      "name": "TCX Clima 2 Surround GTX",
+      "variant": "",
+      "target": null,
+      "countries": [
+        "NL",
+        "BE",
+        "DE"
+      ],
+      "links": [],
+      "createdAt": "2026-11-15T15:54:00Z",
+      "checkedAt": "2026-11-15T15:54:00Z",
+      "offers": [
+        {
+          "shop": "Motostorm",
+          "country": "IT",
+          "price": 239,
+          "url": "https://www.motostorm.it/de/bekleidung/stiefel/tcx-clima-2-surround-gore-tex-boots-black.html",
+          "inStock": null,
+          "note": "Italiaanse winkel"
+        },
+        {
+          "shop": "Louis",
+          "country": "DE",
+          "price": 239.23,
+          "url": "https://m.louis.ie/en/tcx-clima-surround-2-gtx-219860",
+          "inStock": null,
+          "note": "Prijs van de internationale site"
+        },
+        {
+          "shop": "Fortamoto",
+          "country": "NL",
+          "price": 287,
+          "url": "https://www.fortamoto.com/tcx-clima-2-surround-gtx-black-dark-grey-42c.html",
+          "inStock": null,
+          "note": "Vanaf-prijs"
+        },
+        {
+          "shop": "FC-Moto",
+          "country": "DE",
+          "price": null,
+          "url": "https://www.fc-moto.de/nl/TCX-Clima-2-Surround-Gore-Tex-Motorfiets-Laarzen",
+          "inStock": null,
+          "note": "20% korting gezien, europrijs nog nakijken"
+        },
+        {
+          "shop": "ChromeBurner",
+          "country": "NL",
+          "price": null,
+          "url": "https://www.chromeburner.com/eu/en/tcx-clima-2-surround-gore-tex-s26-motorcycle-boots",
+          "inStock": null,
+          "note": ""
+        }
+      ],
+      "history": [
+        {
+          "d": "2026-11-15",
+          "p": 239
+        }
+      ]
+    },
+    {
+      "id": "revit-acre-h2o",
+      "name": "REV'IT! Acre H2O",
+      "variant": "groen",
+      "target": null,
+      "countries": [
+        "NL",
+        "BE",
+        "DE"
+      ],
+      "links": [],
+      "createdAt": "2026-11-15T15:54:00Z",
+      "checkedAt": "2026-11-15T15:54:00Z",
+      "offers": [
+        {
+          "shop": "Motoblouz",
+          "country": "NL",
+          "price": 179.9,
+          "url": "",
+          "inStock": null,
+          "note": "Nederlandse site van Franse winkel, uit jouw screenshot"
+        },
+        {
+          "shop": "Motostorm",
+          "country": "IT",
+          "price": 199.99,
+          "url": "https://www.motostorm.it/en/clothing/boots/revit-acre-h2o-shoes-green.html",
+          "inStock": null,
+          "note": "Italiaanse winkel"
+        },
+        {
+          "shop": "REV'IT! webshop",
+          "country": "NL",
+          "price": 199.99,
+          "url": "https://revitsport.com/products/en-motorcycle-shoes-acre-h2o-anthracite-black",
+          "inStock": null,
+          "note": "Adviesprijs, kleur antraciet"
+        },
+        {
+          "shop": "FC-Moto",
+          "country": "DE",
+          "price": null,
+          "url": "https://www.fc-moto.de/en/Revit-Acre-H2O-waterproof-Motorcycle-Boots",
+          "inStock": null,
+          "note": "15% korting gezien, europrijs nog nakijken"
+        }
+      ],
+      "history": [
+        {
+          "d": "2026-11-15",
+          "p": 179.9
+        }
+      ]
+    }
+  ]
+}
