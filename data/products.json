@@ -167,6 +167,60 @@
           "p": 179.9
         }
       ]
+    },
+    {
+      "id": "forma-terra-evo-low-dry",
+      "name": "Forma Terra Evo Low Dry",
+      "variant": "",
+      "target": null,
+      "countries": [
+        "NL",
+        "BE",
+        "DE"
+      ],
+      "links": [],
+      "createdAt": "2026-11-15T16:30:00Z",
+      "checkedAt": "2026-11-15T16:30:00Z",
+      "offers": [
+        {
+          "shop": "ChromeBurner",
+          "country": "NL",
+          "price": 231.92,
+          "url": "https://www.chromeburner.com/eu/en/forma-terra-evo-low-brown-motorcycle-boots",
+          "inStock": null,
+          "note": "Bruin, mogelijk niet leverbaar"
+        },
+        {
+          "shop": "FC-Moto",
+          "country": "DE",
+          "price": null,
+          "url": "https://www.fc-moto.com/en-gb/p/forma-terra-evo-low-dry-waterproof-motorcycle-boots-FMA-Forma-Terra-Evo-Low-Motorcycle-Boots.v",
+          "inStock": null,
+          "note": "20% korting; site toonde alleen ponden zonder btw. Zwart in maat 41, 42 en 44 lijkt op voorraad"
+        },
+        {
+          "shop": "Galaxus",
+          "country": "BE",
+          "price": null,
+          "url": "https://www.galaxus.be/en/s4/product/la-forma-terra-evo-low-wp-men-40-motorbike-boots-62176888",
+          "inStock": null,
+          "note": "38% korting gezien op zwart maat 40, prijs per maat verschillend"
+        },
+        {
+          "shop": "Galaxus",
+          "country": "DE",
+          "price": null,
+          "url": "https://www.galaxus.de/en/s4/product/la-forma-terra-evo-low-wp-men-44-motorbike-boots-63909089",
+          "inStock": null,
+          "note": "Link is zwart maat 44, prijs per maat verschillend"
+        }
+      ],
+      "history": [
+        {
+          "d": "2026-11-15",
+          "p": 231.92
+        }
+      ]
     }
   ]
 }
