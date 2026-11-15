@@ -7,7 +7,7 @@
     {
       "id": "tcx-clima-2-surround-gtx",
       "name": "TCX Clima 2 Surround GTX",
-      "variant": "",
+      "variant": "maat 46 of 47",
       "target": null,
       "countries": [
         "NL",
@@ -47,8 +47,8 @@
           "country": "DE",
           "price": 248.72,
           "url": "https://www.fc-moto.com/nl-nl/p/tcx-clima-2-surround-gore-tex-motorfiets-laarzen-TCX-Clima-2-Surround-Gore-Tex-Motorcycle-Boot.v",
-          "inStock": true,
-          "note": "Prijs voor maat 45, nog 2 stuks voor deze prijs. Adviesprijs €329"
+          "inStock": false,
+          "note": "Maat 46 en 47 uitverkocht (melding mogelijk). €248,72 geldt voor andere maten"
         },
         {
           "shop": "ChromeBurner",
@@ -61,10 +61,10 @@
         {
           "shop": "Galaxus",
           "country": "NL",
-          "price": null,
+          "price": 313.74,
           "url": "https://www.galaxus.nl/en/s4/product/tcx-clima-2-surround-gtx-men-47-motorbike-boots-24160769",
-          "inStock": null,
-          "note": "13% korting gezien op maat 47, prijs per maat verschillend"
+          "inStock": false,
+          "note": "Maat 46: €313,74, momenteel niet op voorraad. Maat 47 zonder prijs"
         },
         {
           "shop": "Galaxus",
@@ -93,7 +93,7 @@
     {
       "id": "revit-acre-h2o",
       "name": "REV'IT! Acre H2O",
-      "variant": "groen",
+      "variant": "groen, maat 46 of 47",
       "target": null,
       "countries": [
         "NL",
@@ -142,7 +142,7 @@
           "price": 179.99,
           "url": "https://bikeroutfit.nl/en/revit-acre-h2o.html",
           "inStock": null,
-          "note": "Winkel in Amsterdam, voorraad groen niet zichtbaar"
+          "note": "Antraciet maat 46 en 47 op voorraad; groen niet zichtbaar. Winkel in Amsterdam"
         },
         {
           "shop": "Fortamoto",
@@ -171,7 +171,7 @@
     {
       "id": "forma-terra-evo-low-dry",
       "name": "Forma Terra Evo Low Dry",
-      "variant": "",
+      "variant": "maat 46 of 47",
       "target": null,
       "countries": [
         "NL",
@@ -195,8 +195,8 @@
           "country": "DE",
           "price": null,
           "url": "https://www.fc-moto.com/en-gb/p/forma-terra-evo-low-dry-waterproof-motorcycle-boots-FMA-Forma-Terra-Evo-Low-Motorcycle-Boots.v",
-          "inStock": null,
-          "note": "20% korting; site toonde alleen ponden zonder btw. Zwart in maat 41, 42 en 44 lijkt op voorraad"
+          "inStock": false,
+          "note": "20% korting; zwart in maat 46 en 47 niet op voorraad. Alleen ponden zonder btw getoond"
         },
         {
           "shop": "Galaxus",
@@ -209,10 +209,10 @@
         {
           "shop": "Galaxus",
           "country": "DE",
-          "price": null,
-          "url": "https://www.galaxus.de/en/s4/product/la-forma-terra-evo-low-wp-men-44-motorbike-boots-63909089",
-          "inStock": null,
-          "note": "Link is zwart maat 44, prijs per maat verschillend"
+          "price": 294.46,
+          "url": "https://www.galaxus.de/en/s4/product/la-forma-terra-evo-low-wp-men-46-motorbike-boots-62176127",
+          "inStock": true,
+          "note": "Maat 46, nog 2 stuks via externe leverancier, levering 19-20 nov"
         }
       ],
       "history": [
