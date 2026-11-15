@@ -1,6 +1,6 @@
 {
   "status": {
-    "lastRun": "2026-11-15T15:54:00Z",
+    "lastRun": "2026-11-15T16:30:00Z",
     "nextRun": "2026-11-16T07:00:00Z"
   },
   "products": [
@@ -16,7 +16,7 @@
       ],
       "links": [],
       "createdAt": "2026-11-15T15:54:00Z",
-      "checkedAt": "2026-11-15T15:54:00Z",
+      "checkedAt": "2026-11-15T16:30:00Z",
       "offers": [
         {
           "shop": "Motostorm",
@@ -53,10 +53,34 @@
         {
           "shop": "ChromeBurner",
           "country": "NL",
-          "price": null,
-          "url": "https://www.chromeburner.com/eu/en/tcx-clima-2-surround-gore-tex-s26-motorcycle-boots",
+          "price": 263.2,
+          "url": "https://www.chromeburner.nl/tcx-clima-2-surround-gore-tex-2-0-motorcycle-boots",
           "inStock": null,
-          "note": ""
+          "note": "Voorraad onduidelijk, mogelijk niet leverbaar"
+        },
+        {
+          "shop": "Galaxus",
+          "country": "NL",
+          "price": null,
+          "url": "https://www.galaxus.nl/en/s4/product/tcx-clima-2-surround-gtx-men-47-motorbike-boots-24160769",
+          "inStock": null,
+          "note": "13% korting gezien op maat 47, prijs per maat verschillend"
+        },
+        {
+          "shop": "Galaxus",
+          "country": "BE",
+          "price": null,
+          "url": "https://www.galaxus.be/en/s4/product/tcx-clima-2-surround-gtx-men-44-motorbike-boots-24160767",
+          "inStock": null,
+          "note": "Link is maat 44, prijs per maat verschillend"
+        },
+        {
+          "shop": "Galaxus",
+          "country": "DE",
+          "price": null,
+          "url": "https://www.galaxus.de/en/s4/product/tcx-clima-2-surround-gtx-men-44-motorbike-boots-24160767",
+          "inStock": null,
+          "note": "Link is maat 44, prijs per maat verschillend"
         }
       ],
       "history": [
@@ -78,7 +102,7 @@
       ],
       "links": [],
       "createdAt": "2026-11-15T15:54:00Z",
-      "checkedAt": "2026-11-15T15:54:00Z",
+      "checkedAt": "2026-11-15T16:30:00Z",
       "offers": [
         {
           "shop": "Motoblouz",
@@ -91,18 +115,18 @@
         {
           "shop": "Motostorm",
           "country": "IT",
-          "price": 199.99,
-          "url": "https://www.motostorm.it/en/clothing/boots/revit-acre-h2o-shoes-green.html",
+          "price": 179.99,
+          "url": "https://www.motostorm.it/de/bekleidung/stiefel/revit-acre-h2o-shoes-green.html",
           "inStock": null,
-          "note": "Italiaanse winkel"
+          "note": "Italiaanse winkel, groen"
         },
         {
           "shop": "REV'IT! webshop",
           "country": "NL",
           "price": 199.99,
-          "url": "https://revitsport.com/products/en-motorcycle-shoes-acre-h2o-anthracite-black",
+          "url": "https://revitsport.com/products/en-motorcycle-shoes-acre-h2o-army-green-green",
           "inStock": null,
-          "note": "Adviesprijs, kleur antraciet"
+          "note": "Adviesprijs, groen"
         },
         {
           "shop": "FC-Moto",
@@ -111,6 +135,30 @@
           "url": "https://www.fc-moto.de/en/Revit-Acre-H2O-waterproof-Motorcycle-Boots",
           "inStock": null,
           "note": "15% korting gezien, europrijs nog nakijken"
+        },
+        {
+          "shop": "Bikeroutfit",
+          "country": "NL",
+          "price": 179.99,
+          "url": "https://bikeroutfit.nl/en/revit-acre-h2o.html",
+          "inStock": null,
+          "note": "Winkel in Amsterdam, voorraad groen niet zichtbaar"
+        },
+        {
+          "shop": "Fortamoto",
+          "country": "NL",
+          "price": 179.99,
+          "url": "https://www.fortamoto.com/rev-it-acre-h2o-shoes-anthracite-black.html",
+          "inStock": null,
+          "note": "Link is antraciet, groen kost hetzelfde"
+        },
+        {
+          "shop": "ChromeBurner",
+          "country": "DE",
+          "price": 179.99,
+          "url": "https://www.chromeburner.com/de/de/rev-it-acre-h2o-army-green-green-shoes",
+          "inStock": null,
+          "note": "Groen, mogelijk uitverkocht"
         }
       ],
       "history": [
