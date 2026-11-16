@@ -1,7 +1,7 @@
 {
   "status": {
-    "lastRun": "2026-11-15T16:30:00Z",
-    "nextRun": "2026-11-16T07:00:00Z"
+    "lastRun": "2026-11-16T07:05:00Z",
+    "nextRun": "2026-11-17T07:00:00Z"
   },
   "products": [
     {
@@ -16,7 +16,7 @@
       ],
       "links": [],
       "createdAt": "2026-11-15T15:54:00Z",
-      "checkedAt": "2026-11-15T16:30:00Z",
+      "checkedAt": "2026-11-16T07:05:00Z",
       "offers": [
         {
           "shop": "Motostorm",
@@ -24,7 +24,7 @@
           "price": 239,
           "url": "https://www.motostorm.it/de/bekleidung/stiefel/tcx-clima-2-surround-gore-tex-boots-black.html",
           "inStock": null,
-          "note": "Italiaanse winkel"
+          "note": "Italiaanse winkel; maat 46 en 47 staan in de lijst, voorraad niet zichtbaar"
         },
         {
           "shop": "Louis",
@@ -45,10 +45,10 @@
         {
           "shop": "FC-Moto",
           "country": "DE",
-          "price": 248.72,
+          "price": 276.36,
           "url": "https://www.fc-moto.com/nl-nl/p/tcx-clima-2-surround-gore-tex-motorfiets-laarzen-TCX-Clima-2-Surround-Gore-Tex-Motorcycle-Boot.v",
           "inStock": false,
-          "note": "Maat 46 en 47 uitverkocht (melding mogelijk). €248,72 geldt voor andere maten"
+          "note": "Maat 46 en 47: €276,36, uitverkocht (melding mogelijk). Adviesprijs €329"
         },
         {
           "shop": "ChromeBurner",
@@ -87,6 +87,10 @@
         {
           "d": "2026-11-15",
           "p": 239
+        },
+        {
+          "d": "2026-11-16",
+          "p": 239
         }
       ]
     },
@@ -102,7 +106,7 @@
       ],
       "links": [],
       "createdAt": "2026-11-15T15:54:00Z",
-      "checkedAt": "2026-11-15T16:30:00Z",
+      "checkedAt": "2026-11-16T07:05:00Z",
       "offers": [
         {
           "shop": "Motoblouz",
@@ -118,7 +122,7 @@
           "price": 179.99,
           "url": "https://www.motostorm.it/de/bekleidung/stiefel/revit-acre-h2o-shoes-green.html",
           "inStock": null,
-          "note": "Italiaanse winkel, groen"
+          "note": "Italiaanse winkel, groen; maat 46 staat in de lijst, 47 niet"
         },
         {
           "shop": "REV'IT! webshop",
@@ -142,7 +146,7 @@
           "price": 179.99,
           "url": "https://bikeroutfit.nl/en/revit-acre-h2o.html",
           "inStock": null,
-          "note": "Antraciet maat 46 en 47 op voorraad; groen niet zichtbaar. Winkel in Amsterdam"
+          "note": "Antraciet maat 46 en 47 op voorraad; voorraad groen niet zichtbaar. Winkel in Amsterdam"
         },
         {
           "shop": "Fortamoto",
@@ -165,6 +169,10 @@
         {
           "d": "2026-11-15",
           "p": 179.9
+        },
+        {
+          "d": "2026-11-16",
+          "p": 179.9
         }
       ]
     },
@@ -180,7 +188,7 @@
       ],
       "links": [],
       "createdAt": "2026-11-15T16:30:00Z",
-      "checkedAt": "2026-11-15T16:30:00Z",
+      "checkedAt": "2026-11-16T07:05:00Z",
       "offers": [
         {
           "shop": "ChromeBurner",
@@ -209,15 +217,19 @@
         {
           "shop": "Galaxus",
           "country": "DE",
-          "price": 294.46,
+          "price": 295.23,
           "url": "https://www.galaxus.de/en/s4/product/la-forma-terra-evo-low-wp-men-46-motorbike-boots-62176127",
           "inStock": true,
-          "note": "Maat 46, nog 2 stuks via externe leverancier, levering 19-20 nov"
+          "note": "Maat 46 en 47: €295,23, nog 2 stuks via externe leverancier, levering 19-20 nov"
         }
       ],
       "history": [
         {
           "d": "2026-11-15",
+          "p": 231.92
+        },
+        {
+          "d": "2026-11-16",
           "p": 231.92
         }
       ]
