@@ -237,7 +237,7 @@
     {
       "name": "Profitec pro 300",
       "variant": "",
-      "target": null,
+      "target": 1300,
       "countries": [
         "NL",
         "BE",
