@@ -233,6 +233,23 @@
           "p": 231.92
         }
       ]
+    },
+    {
+      "name": "Profitec pro 300",
+      "variant": "",
+      "target": null,
+      "countries": [
+        "NL",
+        "BE",
+        "DE"
+      ],
+      "links": [
+        "https://www.kookwinkel.nl/profitec-pro-300-espressomachine-mat-zwart?utm_medium=referral&utm_source=www.google.com"
+      ],
+      "id": "pmwrmnja580g9",
+      "createdAt": "2026-11-22T09:21:21.245Z",
+      "offers": [],
+      "history": []
     }
   ]
 }
