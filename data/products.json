@@ -1,7 +1,7 @@
 {
   "status": {
-    "lastRun": "2026-11-27T07:06:55Z",
-    "nextRun": "2026-11-28T06:56:00Z"
+    "lastRun": "2026-11-28T07:08:55Z",
+    "nextRun": "2026-11-29T06:56:00Z"
   },
   "products": [
     {
@@ -16,7 +16,7 @@
       ],
       "links": [],
       "createdAt": "2026-11-15T15:54:00Z",
-      "checkedAt": "2026-11-27T07:06:55Z",
+      "checkedAt": "2026-11-28T07:08:55Z",
       "offers": [
         {
           "shop": "Bikeroutfit.de",
@@ -24,23 +24,23 @@
           "price": 204.9,
           "url": "https://www.bikeroutfit.de/tcx-motorradstiefel-clima-2-surround-gtx.html",
           "inStock": null,
-          "note": "Gelijk aan gisteren (adviesprijs €319,98); gratis verzending vanaf €150; voorraad maat 46/47 niet zichtbaar"
+          "note": "Gelijk aan gisteren (adviesprijs €319,98); 'in stock', voorraad per maat niet zichtbaar; gratis verzending vanaf €150"
         },
         {
-          "shop": "ChromeBurner",
-          "country": "NL",
-          "price": 279.65,
-          "url": "https://www.chromeburner.nl/tcx-clima-2-surround-gore-tex-2-0-motorcycle-boots",
+          "shop": "bol.com BE (verkoper ChromeBurner)",
+          "country": "BE",
+          "price": 246.42,
+          "url": "https://www.bol.com/be/fr/p/tcx-clima-2-surround-gore-tex-zwart-gris-fonce-taille-41-botte/9300000151869179/",
           "inStock": null,
-          "note": "Gelijk aan gisteren; verzending vanaf €4,99; 'mail me'-knop, voorraad 46/47 onduidelijk"
+          "note": "Nieuw; prijs gezien voor maat 41 (40/42 zelfde), pagina voor 46/47 niet gevonden; gratis verzending"
         },
         {
-          "shop": "Fortamoto",
-          "country": "NL",
-          "price": 287.0,
-          "url": "https://www.fortamoto.com/tcx-clima-2-surround-gtx-black-dark-grey-42c.html",
+          "shop": "Toms Motorradshop",
+          "country": "DE",
+          "price": 259.95,
+          "url": "https://toms-motorradshop.de/stiefel/touring/15303/tcx-clima-2-surround-gore-tex-stiefel-schwarz",
           "inStock": null,
-          "note": "Gelijk aan gisteren (-10% op €319,99); voorraad pas na maatkeuze"
+          "note": "Gedaald van €324,94; met code BW20 nog -20% (t/m 29-11); maat 46/47 kiesbaar, levertijd 5-7 werkdagen, verzending extra"
         },
         {
           "shop": "Zimo Motorrad",
@@ -49,14 +49,6 @@
           "url": "https://zimo-motorrad.de/TCX-Stiefel-Clima-2-Surround-GTX-schwarz_1",
           "inStock": null,
           "note": "Gelijk aan gisteren; maat 46/47 kiesbaar, voorraad niet getoond; gratis verzending binnen DE"
-        },
-        {
-          "shop": "Toms Motorradshop",
-          "country": "DE",
-          "price": 324.94,
-          "url": "https://toms-motorradshop.de/stiefel/touring/15303/tcx-clima-2-surround-gore-tex-stiefel-schwarz",
-          "inStock": null,
-          "note": "Met code BW20 (-20%, t/m 29-11) €259,95; maat 46/47 kiesbaar, levertijd 5-7 werkdagen"
         }
       ],
       "history": [
@@ -91,6 +83,10 @@
         {
           "d": "2026-11-27",
           "p": 204.9
+        },
+        {
+          "d": "2026-11-28",
+          "p": 204.9
         }
       ]
     },
@@ -106,31 +102,47 @@
       ],
       "links": [],
       "createdAt": "2026-11-15T15:54:00Z",
-      "checkedAt": "2026-11-27T07:06:55Z",
+      "checkedAt": "2026-11-28T07:08:55Z",
       "offers": [
         {
           "shop": "Bikeroutfit",
           "country": "NL",
           "price": 149.99,
           "url": "https://bikeroutfit.nl/en/revit-acre-h2o.html",
-          "inStock": null,
-          "note": "Gelijk aan gisteren (was €199,99); Army Green genoemd, voorraad groen 46/47 onduidelijk; gratis verzending vanaf €50"
+          "inStock": true,
+          "note": "Army Green maat 46 en 47 op voorraad (1 stuk per maat); adviesprijs €199,99; gelijk aan gisteren"
         },
         {
           "shop": "Motorkledingstore.nl",
           "country": "NL",
           "price": 159.99,
           "url": "https://www.motorkledingstore.nl/revit-acre-h2o.html",
+          "inStock": false,
+          "note": "Groen 46 verwacht 16-04-2027, 47 verwacht 15-01-2027; gratis verzending vanaf €50"
+        },
+        {
+          "shop": "MotorKledingVoordeel.nl",
+          "country": "NL",
+          "price": 159.99,
+          "url": "https://www.motorkledingvoordeel.nl/revit-acre-h2o-motorlschoenen.html",
           "inStock": null,
-          "note": "Nieuw; -20% op €199,99; kleur groen, voorraad groen 46/47 onbekend; gratis verzending vanaf €50"
+          "note": "Nieuw; groen 46/47 op 'Backorder' (2-5 werkdagen als leverancier voorraad heeft); gratis verzending vanaf €75"
+        },
+        {
+          "shop": "FC-Moto",
+          "country": "DE",
+          "price": 175.99,
+          "url": "https://www.fc-moto.com/nl-nl/p/revit-acre-h2o-waterdichte-motorlaarzen-militair-groen-46-REV-FBR093-8480-46",
+          "inStock": true,
+          "note": "Nieuw; 'Militair Groen', maat 46 leverbaar, 47 niet; adviesprijs €199,99"
         },
         {
           "shop": "ChromeBurner",
           "country": "DE",
           "price": 179.99,
           "url": "https://www.chromeburner.com/de/de/rev-it-acre-h2o-army-green-green-shoes",
-          "inStock": null,
-          "note": "Army Green, gelijk aan gisteren; 'E-mail wenn verfügbar'-knop, mogelijk uitverkocht"
+          "inStock": false,
+          "note": "Army Green maat 46 en 47 uitverkocht; gelijk aan gisteren"
         },
         {
           "shop": "Fortamoto",
@@ -138,7 +150,7 @@
           "price": 179.99,
           "url": "https://fortamoto.com/rev-it-acre-h2o-shoes-army-green-green.html",
           "inStock": null,
-          "note": "Army Green; gedaald van €199,99 (-10%); voorraad pas na maatkeuze"
+          "note": "-10% op €199,99; voorraad pas na maatkeuze; vestigingsland niet op de pagina bevestigd"
         },
         {
           "shop": "REV'IT! webshop",
@@ -146,15 +158,15 @@
           "price": 199.99,
           "url": "https://revitsport.com/products/en-motorcycle-shoes-acre-h2o-army-green-green",
           "inStock": false,
-          "note": "Army Green: alle maten 40-47 uitverkocht"
+          "note": "Army Green maat 46 en 47 uitverkocht"
         },
         {
           "shop": "Motorradland",
           "country": "DE",
           "price": 199.99,
           "url": "https://motorradland.net/revit-acre-h2o-motorradstiefel",
-          "inStock": null,
-          "note": "Nieuw; Army Green; 'sofort verfügbar' maar alleen maat 41-43 zichtbaar, 46/47 onzeker; verzending extra"
+          "inStock": false,
+          "note": "Army Green en maat 46/47 'niet beschikbaar'; verzending extra"
         },
         {
           "shop": "Motozem",
@@ -162,7 +174,7 @@
           "price": 200.0,
           "url": "https://www.motozem.de/revit-acre-h2o-motorradstiefel-armeegrun-grun/",
           "inStock": null,
-          "note": "Nieuw; armeegrün, maat 46/47 kiesbaar, voorraad pas na maatkeuze"
+          "note": "Armeegrün; voorraad pas na maatkeuze; gelijk aan gisteren"
         }
       ],
       "history": [
@@ -197,6 +209,10 @@
         {
           "d": "2026-11-27",
           "p": 149.99
+        },
+        {
+          "d": "2026-11-28",
+          "p": 149.99
         }
       ]
     },
@@ -212,15 +228,23 @@
       ],
       "links": [],
       "createdAt": "2026-11-15T16:30:00Z",
-      "checkedAt": "2026-11-27T07:06:55Z",
+      "checkedAt": "2026-11-28T07:08:55Z",
       "offers": [
+        {
+          "shop": "Otto.de (verkoper FC-Moto)",
+          "country": "DE",
+          "price": 208.42,
+          "url": "https://www.otto.de/p/forma-terra-evo-low-dry-wasserdichte-motorrad-stiefel-motorradstiefel-wasserdicht-wasserdicht-wechselbare-sohlen-S0QAF0TX/",
+          "inStock": false,
+          "note": "Nieuw; bruin, afgeprijsd van €289,90; alleen maat 44 (uitverkocht), maat 46/47 niet aangeboden"
+        },
         {
           "shop": "Dafy-Moto",
           "country": "BE",
           "price": 229.09,
           "url": "https://nl.dafy-moto.be/terra-evo-low-waterproof-laarzen-forma.html",
           "inStock": false,
-          "note": "Bruin (ook zwart); adviesprijs €289,99; 'in de paddock' (tijdelijk niet leverbaar); gelijk aan gisteren"
+          "note": "Bruin en zwart; 'in de paddock' (tijdelijk niet leverbaar); gelijk aan gisteren"
         },
         {
           "shop": "FC-Moto",
@@ -228,15 +252,7 @@
           "price": 231.92,
           "url": "https://www.fc-moto.com/nl-nl/p/forma-terra-evo-low-dry-waterdichte-motorlaarzen-FMA-Forma-Terra-Evo-Low-Motorcycle-Boots.v",
           "inStock": true,
-          "note": "Bruin; maat 46 op voorraad, maat 47 uitverkocht; verzending naar NL vanaf €6,99"
-        },
-        {
-          "shop": "ChromeBurner",
-          "country": "NL",
-          "price": 231.92,
-          "url": "https://www.chromeburner.com/eu/en/forma-terra-evo-low-brown-motorcycle-boots",
-          "inStock": null,
-          "note": "Bruin; gelijk aan gisteren; voorraad per maat niet zichtbaar"
+          "note": "Bruin; maat 46 op voorraad, 47 niet; verzendkosten extra; gelijk aan gisteren"
         },
         {
           "shop": "Motorsport Klazienaveen",
@@ -247,7 +263,15 @@
           "note": "Bruin; maat 46/47 kiesbaar, voorraad pas na maatkeuze"
         },
         {
-          "shop": "bol.com (tradeinn)",
+          "shop": "Galaxus.de",
+          "country": "DE",
+          "price": 281.99,
+          "url": "https://www.galaxus.de/en/s4/product/la-forma-terra-evo-low-wp-men-46-motorbike-boots-62176127",
+          "inStock": true,
+          "note": "Nieuwe link voor maat 46 (gisteren €332,44 via maat 44-pagina); nog 2 stuks bij StockNet Connect, levering 3-4 dec; maat 47 niet zichtbaar"
+        },
+        {
+          "shop": "bol.com BE (tradeinn)",
           "country": "BE",
           "price": 284.77,
           "url": "https://www.bol.com/be/nl/p/forma-terra-evo-low-bruin-maat-39/9200000123312163/",
@@ -255,20 +279,20 @@
           "note": "Bruin; gratis verzending; maat 46/47 niet te kiezen"
         },
         {
+          "shop": "bol.com NL (tradeinn)",
+          "country": "NL",
+          "price": 284.77,
+          "url": "https://www.bol.com/nl/nl/p/forma-terra-evo-low-bruin-motorlaarzen-41/9200000123312133/",
+          "inStock": false,
+          "note": "Nieuw; bruin; gratis verzending; maat 46/47 niet te kiezen"
+        },
+        {
           "shop": "Motozem.de",
           "country": "DE",
           "price": 289.9,
           "url": "https://www.motozem.de/forma-terra-evo-low-motorradstiefel-schwarz/",
           "inStock": null,
-          "note": "Zwart (bruin zelfde prijs); voorraad pas na maatkeuze; gratis verzending vanaf €79"
-        },
-        {
-          "shop": "Galaxus.de",
-          "country": "DE",
-          "price": 332.44,
-          "url": "https://www.galaxus.de/en/s4/product/la-forma-terra-evo-low-wp-44-motorbike-boots-60469157",
-          "inStock": null,
-          "note": "Prijs voor maat 46 (via maatkeuze); ca. €3 lager dan gisteren; verkoper StockNet Connect; gratis verzending"
+          "note": "Zwart (bruin zelfde prijs); maat 46/47 kiesbaar, voorraad niet getoond"
         }
       ],
       "history": [
@@ -303,6 +327,10 @@
         {
           "d": "2026-11-27",
           "p": 231.92
+        },
+        {
+          "d": "2026-11-28",
+          "p": 231.92
         }
       ]
     },
@@ -324,7 +352,7 @@
         {
           "shop": "Manufactum",
           "country": "NL",
-          "price": 1199.0,
+          "price": 1199,
           "url": "https://www.manufactum.nl/profitec-pro-300-a211201/",
           "inStock": false,
           "note": "Zwart, was €1.590; uitverkocht, niet langer beschikbaar"
@@ -332,7 +360,7 @@
         {
           "shop": "Manufactum",
           "country": "BE",
-          "price": 1199.0,
+          "price": 1199,
           "url": "https://nl.manufactum.be/profitec-pro-300-a211201/",
           "inStock": false,
           "note": "Zwart, was €1.590; uitverkocht, niet langer beschikbaar"
@@ -340,50 +368,58 @@
         {
           "shop": "Topf & Pfanne",
           "country": "DE",
-          "price": 1435.0,
+          "price": 1435,
           "url": "https://www.topf-pfanne.de/espressomaschinen-und-zubehoer/siebtraegermaschienen/profitech-pro-300.html",
           "inStock": null,
-          "note": "Alleen in de winkel te koop ('nur im Laden erhältlich'), niet online te bestellen"
-        },
-        {
-          "shop": "Caffista",
-          "country": "DE",
-          "price": 1499.0,
-          "url": "https://caffista.de/product/profitec-pro-300-black-cm500002-01/",
-          "inStock": true,
-          "note": "Full black; 'vorrätig', levering in overleg; verzendkosten extra"
-        },
-        {
-          "shop": "nur Gutes",
-          "country": "DE",
-          "price": 1499.0,
-          "url": "https://nurgutes.de/en/products/profitec-pro-300-black",
-          "inStock": false,
-          "note": "Mat zwart, was €1.625; uitverkocht"
-        },
-        {
-          "shop": "Stoll Espresso",
-          "country": "DE",
-          "price": 1519.0,
-          "url": "https://www.stoll-espresso.de/espressomaschinen/profitec/profitec-pro-300-dualboiler-pid-schwarz",
-          "inStock": true,
-          "note": "Zwart, Fast Heat; levering 1-3 dagen; gratis verzending binnen DE"
+          "note": "Alleen in de winkel te koop, niet online te bestellen"
         },
         {
           "shop": "Barista Espresso",
           "country": "NL",
-          "price": 1538.95,
+          "price": 1456.95,
           "url": "https://barista-espresso.nl/products/profitec-pro-300",
           "inStock": null,
-          "note": "Zwart; Black Week tot 5% korting t/m 30-11"
+          "note": "Zwart/standaard; gedaald van €1.538,95 door Black Week-korting (tot 10%, t/m 30-11); voorraad niet vermeld"
+        },
+        {
+          "shop": "Moba Coffee",
+          "country": "DE",
+          "price": 1499,
+          "url": "https://www.mobacoffee.de/Profitec-Pro300-PID-Dualboiler-Schwarz",
+          "inStock": true,
+          "note": "Nieuw; mat zwart (Fast Heat), was €1.529; op voorraad, 1-3 werkdagen, gratis verzending binnen DE"
+        },
+        {
+          "shop": "Caffista",
+          "country": "DE",
+          "price": 1499,
+          "url": "https://caffista.de/product/profitec-pro-300-black-cm500002-01/",
+          "inStock": false,
+          "note": "Full black; nu in nabestelling; verzendkosten extra"
+        },
+        {
+          "shop": "Stoll Espresso",
+          "country": "DE",
+          "price": 1519,
+          "url": "https://www.stoll-espresso.de/espressomaschinen/profitec/profitec-pro-300-dualboiler-pid-schwarz",
+          "inStock": true,
+          "note": "Zwart (Fast Heat); levering 1-3 dagen; gratis verzending binnen DE"
+        },
+        {
+          "shop": "Fixpresso",
+          "country": "BE",
+          "price": 1549,
+          "url": "https://www.fixpresso.be/en/product/profitec-pro-300-dual-boiler-with-pid-contol",
+          "inStock": null,
+          "note": "Nieuw; standaard (waarschijnlijk rvs), zwarte versie €1.649"
         },
         {
           "shop": "Espresso Perfetto Den Haag",
           "country": "NL",
-          "price": 1549.0,
+          "price": 1549,
           "url": "https://www.espressoperfetto-denhaag.nl/product/profitec-pro-300-dual-boiler/",
-          "inStock": null,
-          "note": "Nieuw; koffiespeciaalzaak; rvs; voorraad en verzendkosten niet vermeld"
+          "inStock": true,
+          "note": "Koffiespeciaalzaak; op voorraad; uitvoering niet duidelijk"
         },
         {
           "shop": "Avola Coffeesystems",
@@ -394,25 +430,17 @@
           "note": "Mat zwart (Black Edition, Fast Heat); direct leverbaar, verzendkosten extra"
         },
         {
-          "shop": "Aromatico",
-          "country": "DE",
-          "price": 1585.0,
-          "url": "https://www.aromatico.de/en/p/profitec-pro-300",
-          "inStock": null,
-          "note": "Levering 1-3 werkdagen, verzending €4,90"
-        },
-        {
           "shop": "ByVersloot",
           "country": "NL",
-          "price": 1595.0,
+          "price": 1595,
           "url": "https://byversloot.nl/koffie/profitec-pro-300-dual-boiler-espressomachine-in-mat-zwart.html",
           "inStock": false,
-          "note": "Mat zwart; niet op voorraad (gezien op merkpagina van de winkel)"
+          "note": "Mat zwart; niet op voorraad"
         },
         {
           "shop": "Koffiewarenhuis",
           "country": "NL",
-          "price": 1599.0,
+          "price": 1599,
           "url": "https://www.koffiewarenhuis.nl/producten/profiitec-pro-300-mat-zwart",
           "inStock": null,
           "note": "Mat zwart; levertijd 5-10 werkdagen; gratis baristaset t.w.v. €119,90"
@@ -442,9 +470,13 @@
         {
           "d": "2026-11-27",
           "p": 1435.0
+        },
+        {
+          "d": "2026-11-28",
+          "p": 1435
         }
       ],
-      "checkedAt": "2026-11-27T07:06:55Z"
+      "checkedAt": "2026-11-28T07:08:55Z"
     }
   ]
 }
